@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32228.343
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSeatDistribute", "AutoSeatDistribute\AutoSeatDistribute.csproj", "{FF9FBAA2-3000-481D-A162-F377C77DA694}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSeatDistribute1.0.2", "AutoSeatDistribute\AutoSeatDistribute1.0.2.csproj", "{FF9FBAA2-3000-481D-A162-F377C77DA694}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

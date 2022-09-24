@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,11 +75,18 @@ namespace AutoSeatDistribute
             int nc = 0;
             int allpeople;
             int total = 0;
+            bool rowerror = false;
             for (int i = 0; i < rowscount; i++)
             {
                 bool sus = int.TryParse(((TextBox)RowsSeatsPanel.Controls.Find(RowsTBName[i], true)[0]).Text,out nc);
                 if (sus)
-                {
+                {   
+                    if(Convert.ToInt32(((TextBox)RowsSeatsPanel.Controls.Find(RowsTBName[i], true)[0]).Text) > 8)
+                    {
+                        MessageBox.Show("第" + (i + 1).ToString() + "排沒那麼多人吧");
+                        rowerror = true;
+                        break;
+                    }
                     int person = Convert.ToInt32(((TextBox)RowsSeatsPanel.Controls.Find(RowsTBName[i], true)[0]).Text);
                     total = total + person;
                     EachRowsSeatCount.Add(person);
@@ -89,9 +97,14 @@ namespace AutoSeatDistribute
                     allsus = false;
                 }
             }
+            if (rowerror)
+            {
+                allsus = false;
+            }
             if (allsus)
             {
-                if (peoplesus)
+                int tpr = int.Parse(PPLNText.Text);
+                if (peoplesus && total == tpr)
                 {   
                     allpeople = Convert.ToInt32(PPLNText.Text);
                     if(allpeople>45 || allpeople < 15)
@@ -109,11 +122,7 @@ namespace AutoSeatDistribute
                             ControlPanel.Controls.Add(sc);
                             EachRowsSeatCount.Clear();
                         }
-                        else
-                        {
-                            MessageBox.Show("Number of People and Total Seats are not the same");
-                            EachRowsSeatCount.Clear();
-                        }
+
                     }
                 }
                 else
@@ -141,6 +150,25 @@ namespace AutoSeatDistribute
             {
                 Animate = false;
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {   
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string tper = folderBrowserDialog1.SelectedPath;
+                int width = ControlPanel.Size.Width;
+                int height = ControlPanel.Size.Height;
+                Bitmap bm = new Bitmap(width, height);
+                ControlPanel.DrawToBitmap(bm, new Rectangle(0, 0, width, height));
+                bm.Save($"{tper}\\{classname}座位表.Jpeg",ImageFormat.Jpeg);
+                MessageBox.Show("Picture downloaded successful!");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

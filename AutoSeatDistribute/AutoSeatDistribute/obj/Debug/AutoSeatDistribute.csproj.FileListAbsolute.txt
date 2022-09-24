@@ -23,3 +23,16 @@ C:\Users\Admin\Downloads\AutoSeatDistribute-20220903T093144Z-001\AutoSeatDistrib
 C:\Users\Admin\Downloads\AutoSeatDistribute-20220903T093144Z-001\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Downloads\AutoSeatDistribute-20220903T093144Z-001\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.exe
 C:\Users\Admin\Downloads\AutoSeatDistribute-20220903T093144Z-001\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.pdb
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\bin\Debug\AutoSeatDistribute.exe.config
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\bin\Debug\AutoSeatDistribute.exe
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\bin\Debug\AutoSeatDistribute.pdb
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.Action.resources
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.Properties.Resources.resources
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.SeatControl.resources
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.Start.resources
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.csproj.GenerateResource.cache
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.exe
+C:\Users\Admin\Downloads\TCIVS-SeatsAllocationSystem\AutoSeatDistribute\AutoSeatDistribute\obj\Debug\AutoSeatDistribute.pdb

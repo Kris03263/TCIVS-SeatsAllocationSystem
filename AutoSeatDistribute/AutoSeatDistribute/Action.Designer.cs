@@ -30,10 +30,13 @@ namespace AutoSeatDistribute
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.Lastbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.ExportButton = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Animation = new System.Windows.Forms.CheckBox();
             this.GenerateButton = new System.Windows.Forms.Button();
             this.PPLNText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,15 +45,16 @@ namespace AutoSeatDistribute
             this.panel5 = new System.Windows.Forms.Panel();
             this.ClassNameLable = new System.Windows.Forms.Label();
             this.ControlPanel = new System.Windows.Forms.Panel();
-            this.Animation = new System.Windows.Forms.CheckBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.ExportButton.SuspendLayout();
             this.RowsSeatsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.Lastbutton);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.ExitButton);
@@ -59,6 +63,21 @@ namespace AutoSeatDistribute
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(746, 31);
             this.panel1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("新細明體", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(668, 6);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(20, 19);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "−";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Lastbutton
             // 
@@ -101,25 +120,51 @@ namespace AutoSeatDistribute
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // panel2
+            // ExportButton
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.Controls.Add(this.Animation);
-            this.panel2.Controls.Add(this.GenerateButton);
-            this.panel2.Controls.Add(this.PPLNText);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.RowsSeatsPanel);
-            this.panel2.Controls.Add(this.ClassNameLable);
-            this.panel2.Controls.Add(this.ControlPanel);
-            this.panel2.Location = new System.Drawing.Point(-1, 34);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(746, 418);
-            this.panel2.TabIndex = 1;
+            this.ExportButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExportButton.Controls.Add(this.button1);
+            this.ExportButton.Controls.Add(this.Animation);
+            this.ExportButton.Controls.Add(this.GenerateButton);
+            this.ExportButton.Controls.Add(this.PPLNText);
+            this.ExportButton.Controls.Add(this.label2);
+            this.ExportButton.Controls.Add(this.RowsSeatsPanel);
+            this.ExportButton.Controls.Add(this.ClassNameLable);
+            this.ExportButton.Controls.Add(this.ControlPanel);
+            this.ExportButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ExportButton.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExportButton.Location = new System.Drawing.Point(-1, 34);
+            this.ExportButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ExportButton.Name = "ExportButton";
+            this.ExportButton.Size = new System.Drawing.Size(746, 418);
+            this.ExportButton.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(237, 396);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(58, 22);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Export";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // Animation
+            // 
+            this.Animation.AutoSize = true;
+            this.Animation.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Animation.Location = new System.Drawing.Point(151, 397);
+            this.Animation.Name = "Animation";
+            this.Animation.Size = new System.Drawing.Size(81, 19);
+            this.Animation.TabIndex = 6;
+            this.Animation.Text = "Animation";
+            this.Animation.UseVisualStyleBackColor = true;
+            this.Animation.CheckStateChanged += new System.EventHandler(this.Animation_CheckStateChanged);
             // 
             // GenerateButton
             // 
-            this.GenerateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GenerateButton.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GenerateButton.Location = new System.Drawing.Point(37, 384);
             this.GenerateButton.Margin = new System.Windows.Forms.Padding(2);
@@ -135,7 +180,7 @@ namespace AutoSeatDistribute
             this.PPLNText.Location = new System.Drawing.Point(34, 356);
             this.PPLNText.Margin = new System.Windows.Forms.Padding(2);
             this.PPLNText.Name = "PPLNText";
-            this.PPLNText.Size = new System.Drawing.Size(76, 22);
+            this.PPLNText.Size = new System.Drawing.Size(76, 20);
             this.PPLNText.TabIndex = 4;
             // 
             // label2
@@ -199,25 +244,13 @@ namespace AutoSeatDistribute
             this.ControlPanel.Size = new System.Drawing.Size(586, 373);
             this.ControlPanel.TabIndex = 0;
             // 
-            // Animation
-            // 
-            this.Animation.AutoSize = true;
-            this.Animation.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Animation.Location = new System.Drawing.Point(151, 397);
-            this.Animation.Name = "Animation";
-            this.Animation.Size = new System.Drawing.Size(81, 19);
-            this.Animation.TabIndex = 6;
-            this.Animation.Text = "Animation";
-            this.Animation.UseVisualStyleBackColor = true;
-            this.Animation.CheckStateChanged += new System.EventHandler(this.Animation_CheckStateChanged);
-            // 
             // Action
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(745, 453);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.ExportButton);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -226,8 +259,8 @@ namespace AutoSeatDistribute
             this.Load += new System.EventHandler(this.Action_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.ExportButton.ResumeLayout(false);
+            this.ExportButton.PerformLayout();
             this.RowsSeatsPanel.ResumeLayout(false);
             this.RowsSeatsPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -237,7 +270,7 @@ namespace AutoSeatDistribute
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel ExportButton;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Label ClassNameLable;
         private System.Windows.Forms.Panel ControlPanel;
@@ -250,6 +283,9 @@ namespace AutoSeatDistribute
         private System.Windows.Forms.Label EachRowsSeats;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.CheckBox Animation;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

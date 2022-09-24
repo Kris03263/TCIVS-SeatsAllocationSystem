@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace AutoSeatDistribute
 {
@@ -17,8 +19,62 @@ namespace AutoSeatDistribute
         string className;
         List<int> PeopleNumberList = new List<int>();
         List<int> Result = new List<int>();
+        List<string> SeatsResultID = new List<string>();
         int widget,high;
         bool Animate;
+
+        private void SwitchButton_Click(object sender, EventArgs e)
+        {
+            int nc = 0;
+            bool sus = int.TryParse(FirstTB.Text, out nc);
+            bool sus2 = int.TryParse(SecondTB.Text, out nc);
+            if (sus && sus2)
+            {
+                bool findsus1 = false;
+                bool findsus2 = false;
+                foreach (Control c in SeatsPanel.Controls)
+                {
+                    //MessageBox.Show(c.Name);
+                    if (c is Label && c.Name == "lbn" + FirstTB.Text)
+                    {
+                        findsus1 = true;
+
+                    }else if (c is Label && c.Name == "lbn" + SecondTB.Text)
+                    {
+                        findsus2 = true;
+                    }
+                }
+                if (findsus1 && findsus2)
+                {
+                    string tmpText,tmpName;
+                    Control c = ((Label)SeatsPanel.Controls.Find("lbn" + FirstTB.Text, true)[0]);
+                    tmpText = c.Text;
+                    tmpName = c.Name;
+                    Control v = ((Label)SeatsPanel.Controls.Find("lbn" + SecondTB.Text, true)[0]);
+                    c.Text = v.Text;
+                    c.Name = v.Name;
+                    v.Text = tmpText;
+                    v.Name = tmpName;
+                    MessageBox.Show("Change Successful!");
+                }
+                else
+                {
+                    MessageBox.Show("No such as Number in result");
+                }
+            }
+            else if(sus == false && sus2 == true)
+            {
+                MessageBox.Show("First empty should be number! ");
+            }else if (sus2 == false && sus == true)
+            {
+                MessageBox.Show("Second empty should be number!");
+            }
+            else
+            {
+                MessageBox.Show("Please enter again!");
+            }
+        }
+
         public SeatControl(List<int> tbc, int ppl, string clsn,int rw, bool animate)
         {
             InitializeComponent();
@@ -57,9 +113,10 @@ namespace AutoSeatDistribute
                             MessageBox.Show($"第{count+1}個是: " + Result[count].ToString());
                         }
                         Label seat = new Label();
-                        string lbn = "LB" + Result[count];
                         seat.Text = Result[count].ToString();
-                        seat.Name = lbn;
+                        string SeatsID = "lbn" + Result[count].ToString();
+                        seat.Name = SeatsID;
+                        SeatsResultID.Add(SeatsID);
                         seat.AutoSize = false;
                         var Fontsize = seat.Font.Size;
                         Fontsize = 14;
